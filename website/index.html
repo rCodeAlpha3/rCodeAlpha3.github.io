@@ -124,6 +124,126 @@ ul.social-footer2 li a {display: block;	height:30px;width: 30px;text-align: cent
 * {
   box-sizing: border-box;
 }
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  font-family: 'segoe ui';
+}
+
+.nav {
+
+
+}
+
+.nav > .nav-header {
+  display: inline;
+  z-index: 999;
+}
+
+.nav > .nav-header > .nav-title {
+  display: inline-block;
+  font-size: 22px;
+  color: #fff;
+  padding: 10px 10px 10px 10px;
+  z-index: 999;
+}
+
+.nav > .nav-btn {
+  display: none;
+  z-index: 999;
+}
+
+.nav > .nav-links {
+  display: inline;
+  float: right;
+  font-size: 18px;
+  z-index: 999;
+}
+
+.nav > .nav-links > a {
+  display: inline-block;
+  padding: 13px 10px 8px 7px;
+  text-decoration: none;
+  color: #efefef;
+  z-index: 999;
+}
+
+.nav > .nav-links > a:hover {
+  background-color: rgba(0, 0, 0, 1);
+  z-index: 999;
+}
+
+.nav > #nav-check {
+  display: none;
+  z-index: 999;
+}
+
+@media (max-width:600px) {
+  .nav > .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    z-index: 999;
+  }
+  .nav > .nav-btn > label {
+    display: inline-block;
+    width: 50px;
+    height: 20px;
+    padding: 13px;
+    z-index: 999;
+  }
+  .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 999;
+  }
+  .nav > .nav-btn > label > span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid #eee;
+    z-index: 999;
+  }
+  .nav > .nav-links {
+    position: absolute;
+    display: block;
+    width: 40%;
+    background-color: #000;
+    height: 0px;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 0px;
+    left: 0px;
+    z-index: 999;
+  }
+  .nav > .nav-links > a {
+    display: block;
+    width: 100%;
+   
+  }
+  .nav > #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
+    z-index: 999;
+  }
+  .nav > #nav-check:checked ~ .nav-links {
+    height: calc(90vh - 340px);
+    overflow-y: auto;
+      z-index: 999;
+  }
+}
+
+
+
+
+
+
+
+
+
+
 
 /* Style the body */
 body {
@@ -139,6 +259,7 @@ body {
   padding: 40px 0px 0px 0px;
   font-size:3em;
   font-family:cursive;
+  text-shadow: #000 2px 2px 0px;
   text-align: left;
   background: url("img/d.jpg");
   background-repeat: no-repeat;
@@ -149,15 +270,16 @@ body {
 /* Increase the font size of the heading */
 .header h1 {
   font-size: 40px;
+
 }
 
 /* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
 .navbar {
   overflow: hidden;
   background: rgb(0,0,0);
-  position: sticky;
-  position: -webkit-sticky;
+  
   top: 0;
+  z-index: 9;
 }
 
 /* Style the navigation bar links */
@@ -166,20 +288,32 @@ body {
   display: block;
   color: white;
   text-align: center;
-  padding: 20px 20px;
+  padding: 16px 20px;
 
   text-decoration: none;
-  position:relative;
-  
+ 
+  font-size: 24px;
 }
 
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline;
+	}
+
+	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+		display: block;
+	}
 .a{
   top:21px;
   left:auto
 }
 /* Right-aligned link */
 .navbar a.right {
-  float: right;
+  float: left;
  
 }
 
@@ -274,10 +408,37 @@ Code Alpha - enlightens your Business
   <a href="#"class="a">About Us</a>
   <a href="#" class="a">Contact Us</a>
   <a href="#" class="a">Contact Us</a>
-  <a href="#" class="right"><img src='img/w.png' style='height:50px;'></a>
-  <a href="#" class="right"><img src='img/t.png' style='height:50px;'></a>
-  <a href="#" class="right"><img src='img/ama.png' style='height:50px;'></a>
-  <a href="#" class="right"><img src='img/linked.png' style='height:50px;'></a>
+  <!-- <a href="#" class="right menu"><img src='img/w.png' style='height:50px;'></a>
+  <a href="#" class="right menu"><img src='img/t.png' style='height:50px;'></a>
+  <a href="#" class="right menu"><img src='img/ama.png' style='height:50px;'></a>
+  <a href="#" class="right menu"><img src='img/linked.png' style='height:50px;'></a> -->
+
+  <div class="nav">
+  <input type="checkbox" id="nav-check">
+  <div class="nav-header">
+    <div class="nav-title">
+ 
+
+    
+    </div>
+    
+  </div>
+  <div class="nav-btn">
+    <label for="nav-check">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+  
+  <div class="nav-links">
+    <a href="//github.io/jo_geek" target="_blank"><img src='img/w.png' style='height:35px;'></a>
+    <a href="http://stackoverflow.com/users/4084003/" target="_blank"><img src='img/t.png' style='height:35px;'></a>
+    <a href="https://in.linkedin.com/in/jonesvinothjoseph" target="_blank"><img src='img/ama.png' style='height:35px;'></a>
+    <a href="https://codepen.io/jo_Geek/" target="_blank"><img src='img/linked.png' style='height:35px;'></a>
+  
+  </div>
+</div>
 </div>
 
 
@@ -524,3 +685,4 @@ Code Alpha - enlightens your Business
 
 </body>
 </html>
+
